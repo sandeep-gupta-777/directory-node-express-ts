@@ -7,7 +7,7 @@ Database used in this project is mongoDB.
 2. Install dependecies : ```npm install```
 3. Build the project: ```npm run watch-ts```
 4. Run the node server: ```npm run watch-node```.** MAKE SURE YOU HAVE INTERNET CONNECTION TO CONNECT TO MONGODB**
-5. Open browser and go to http://localhost:3000. You will see *this is home page*
+5. Open browser and go to ````://localhost:3000```. You will see *this is home page*
 
 To run tests: ```npm run tests```
 
@@ -46,9 +46,10 @@ Returns: User detail along with a JWT token which is to be used in subsequent AP
 
 * Get account details:
 
-**GET** http://localhost:3000/users/:USER_ID/accounts/read?name=value1&number=value2&scope=value3&page=value4
 
-Example url: http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/read?name=sandeep&number=9042794201&scope=global&page=1
+**GET** ```http://localhost:3000/users/:USER_ID/accounts/read?name=value1&number=value2&scope=value3&page=value4```
+
+Example url: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/read?name=sandeep&number=9042794201&scope=global&page=1```
 
 >Note: All the queries perform by a non-admin user will be limited to entries they have created. On the other hand admin can access all
 >the entries created by all the user. However, to enable this privilage admin will have to pass ```scope=global``` in the query params as shown above.
@@ -58,9 +59,11 @@ Sample payload: None. This is GET API
 
 Return: Account details of user. If used is admin with scope=global flag, this apis return top 10 account matching the query.
 
-* Create account: PUT http://localhost:3000/users/:USER_ID/accounts/create
+* Create account:
 
-Example url: http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/create
+**PUT** ```http://localhost:3000/users/:USER_ID/accounts/create```
+
+Example url: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/create```
 
 Used by admin to create new admin("USER_ROLE":"ADMIN") or non-admin("USER_ROLE":"NON-ADMIN") accounts
 
@@ -76,9 +79,9 @@ Example: payload
 
 return: Created user details with a JWT token. This token can be used by user to start a session.
 
-* Update account: POST http://localhost:3000/users/:USER_ID/accounts/update?name=value1&number=value2&scope=value3
+* Update account: POST ```http://localhost:3000/users/:USER_ID/accounts/update?name=value1&number=value2&scope=value3```
 
-Example url: http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/update?name=sandeep&number=9042794201&scope=global
+Example url: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/update?name=sandeep&number=9042794201&scope=global```
 
 Used to update account details. A non-admin can update their own account details while admin can update other's account details by passing
 scope=global flag in query params.
@@ -91,9 +94,11 @@ Example: payload
 ```
 return: "n modified". n is number of accounts modified.
 
-* Delete account: DELETE http://localhost:3000/users/:USER_ID/accounts/delete?name=value1&number=value2&scope=value3
+* Delete account:
 
-Example url: http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/delete?name=sandeep&number=9042794201&scope=global
+**DELETE** ```http://localhost:3000/users/:USER_ID/accounts/delete?name=value1&number=value2&scope=value3```
+
+Example url: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/delete?name=sandeep&number=9042794201&scope=global```
 
 Used to delete accounts. A non-admin can delete their own account while admin can delete other's account details by passing
 scope=global flag in query params.
@@ -105,9 +110,11 @@ return: "n delete". n is number of accounts deleted.
 
 3. Directory-actions
 
-* Get directory entry details: GET http://localhost:3000/users/:USER_ID/directory/read?name=value1&number=value2&scope=value3&page=value4
+* Get directory entry details:
 
-Example url: http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/directory/read?name=sandeep&number=9910508102&scope=global&page=1
+**GET** ```http://localhost:3000/users/:USER_ID/directory/read?name=value1&number=value2&scope=value3&page=value4```
+
+Example url: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/directory/read?name=sandeep&number=9910508102&scope=global&page=1```
 
 >Note: All the queries perform by a non-admin user will be limited to entries they have created. On the other hand admin can access all
 >the entries created by all the user. However, to enable this privilage admin will have to pass ```scope=global``` in the query params as shown above.
@@ -117,9 +124,12 @@ Sample payload: None. This is GET API
 
 Return: directory entry details which were created by user. If user is admin with scope=global flag, this API return top 10 directory entries matching the query.
 
-* Create directory entry: PUT http://localhost:3000/users/:USER_ID/directory/create
+* Create directory entry:
 
-Example url: http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/create
+
+**PUT** ```http://localhost:3000/users/:USER_ID/directory/create```
+
+Example url: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/create```
 
 Used to create directory entry.
 
@@ -134,9 +144,9 @@ Example: payload
 ```
 return: Success response if successful.
 
-* Update directory entry: POST http://localhost:3000/users/:USER_ID/directory/update?name=value1&number=value2&scope=value3
+* Update directory entry: POST ```http://localhost:3000/users/:USER_ID/directory/update?name=value1&number=value2&scope=value3```
 
-Example url: http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/director/update?name=sandeep&number=9042794201&scope=global
+Example url: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/director/update?name=sandeep&number=9042794201&scope=global```
 
 Used to update directory entry details. A non-admin can update their own directory entry details while admin can update other's directory entry details by passing
 scope=global flag in query params.
@@ -150,9 +160,11 @@ Example: payload
 
 return: "n modified". n is number of directory entries modified.
 
-* Delete directory entry: DELETE http://localhost:3000/users/:USER_ID/directory/delete?name=value1&number=value2&scope=value3
+* Delete directory entry:
 
-Example url: http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/directory/delete?name=sandeep&number=9042794201&scope=global
+**DELETE** ```http://localhost:3000/users/:USER_ID/directory/delete?name=value1&number=value2&scope=value3```
+
+Example url: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/directory/delete?name=sandeep&number=9042794201&scope=global```
 
 Used to delete directory entry. A non-admin can delete their own directory entry while admin can delete other's directory entry by passing
 scope=global flag in query params.
