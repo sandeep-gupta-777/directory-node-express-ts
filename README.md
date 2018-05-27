@@ -110,7 +110,9 @@ Example: payload
 
 **Returns** Created user details with a JWT token. This token can be used by user to start a session.
 
-* Update account: POST ```http://localhost:3000/users/:USER_ID/accounts/update?name=value1&number=value2&scope=value3```
+* Update account: 
+
+**POST** ```http://localhost:3000/users/:USER_ID/accounts/update?name=value1&number=value2&scope=value3```
 
 Example url: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/accounts/update?name=sandeep&number=9042794201&scope=global```
 
@@ -175,7 +177,10 @@ Example: payload
 ```
 **Returns** Success response if successful.
 
-* Update directory entry: POST ```http://localhost:3000/users/:USER_ID/directory/update?name=value1&number=value2&scope=value3```
+* Update directory entry: 
+
+
+**POST** ```http://localhost:3000/users/:USER_ID/directory/update?name=value1&number=value2&scope=value3```
 
 **Example Url**: ```http://localhost:3000/users/5b0ad0b5b20501e1a08b5870/director/update?name=sandeep&number=9042794201&scope=global```
 
