@@ -141,13 +141,16 @@ export function verifyAdmin(req:Request, res:Response, next?:NextFunction) {
         })
         .then((doc:any)=>{
             if(currentUserRecord) return;
-            currentUserRecord = res.locals.currentUser = doc[0];
+            currentUserRecord = res.locals.currentUser = doc && doc[0];
+            if(!currentUserRecord) throw new Error(error_Code_Enum.ID_OR_EMAIL_NOT_FOUND_IN_RECORDS.toString());
             if(currentUserRecord.USER_ROLE !== roles.ADMIN) throw new Error(error_Code_Enum.UNAUTHERIZED_ACCESS.toString())
-            if(next) next();//if verifyAdmin is called as middleware, next will be some valid function. Otherwise undefined
+            if(next) next();
         })
         .catch((err)=>{
             res.locals.err = err;
-            next(err)
+            if(next) return next(err)
+            throw err;
+
         })
 
 }

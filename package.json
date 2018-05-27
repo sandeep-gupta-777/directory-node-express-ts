@@ -1,16 +1,16 @@
 {
-  "name": "express-typescript-starter",
+  "name": "directory-node-express-ts",
   "version": "0.1.0",
-  "description": "A starting point for Node.js express apps with TypeScript",
+  "description": "A phone number directory build in node-express-typescript",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/TypeScript-Node-Starter"
+    "url": "https://github.com/sangupta007/directory-node-express-ts"
   },
-  "author": "Bowden Kelly",
-  "license": "MIT",
+  "author": "Sandeep Gupta",
   "scripts": {
     "start": "npm run serve",
-    "build": "npm run build-sass && npm run build-ts && npm run tslint && npm run copy-static-assets",
+    "build-ts": "tsc",
+    "build": "npm run build-ts",
     "serve": "node dist/server.js",
     "watch-node": "nodemon dist/server.js",
     "test": "jest --forceExit --coverage --verbose",

@@ -49,10 +49,15 @@ export let registerRoutesInit = function (router: any) {
     * 2.creating a new admin/non-admin user, by admin
     * */
     router.put([routes.signup.route, routes.account_create.route], function (req: Request, res: Response, next: NextFunction) {
-        let dirUser: IDirUser = {
-            ...req.body,
-            USER_HASHED_PASSWORD: createPasswordHash(req.body.PASSWORD, 10),
-        };
+        let dirUser: IDirUser;
+        try{
+            dirUser= {
+                ...req.body,
+                USER_HASHED_PASSWORD: createPasswordHash(req.body.PASSWORD, 10),
+            };
+        }catch (e) {
+            next(e);
+        }
         let userRecordRef: IDirUser = {};
         let account_create_url_regex = /users[\/]\w*[\/]accounts[\/]create/i;
         Promise.resolve()
@@ -122,6 +127,9 @@ export let registerRoutesInit = function (router: any) {
                     sendErrRes(req, res);
                 });
         });
+
+
+    router.get("/",(req:Request,res:Response)=> res.send("this is home page"));
 
 
 };
