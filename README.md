@@ -15,6 +15,32 @@ This is an Express project written in Typescript. This project is a bundle of AP
 To run tests: ```npm run tests```
 
 # API Documentation
+
+First thing first. Almost all the APIs except /signup and /login, require JWT token. Otherwise server will throw following error:
+
+```
+{
+    "errCode": "1202",
+    "desc": "TOKEN_NOT_PRESENT_OR_INVALID"
+}
+```
+
+Following are the steps to set up token:
+
+1. Call /signup or /login as demonstrated below.
+2. Above call will respond JWT token.
+3. If you are using postman to test these APIs, set header as follows:
+
+```Content-Type:application/json```
+
+```Authorization:Bearer <token here>```
+
+
+![Postman header](https://preview.ibb.co/kLB5sd/token.png)
+
+
+
+
 **1. Registration**
 * Signup
 
@@ -32,7 +58,7 @@ Returns: User detail along with a JWT token which is to be used in subsequent AP
 
 * Login:
 
-**POST** ```http://localhost:3000/signup```
+**POST** ```http://localhost:3000/login```
 
 Sample payload:
 ```
