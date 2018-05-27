@@ -18,7 +18,7 @@ To run tests: ```npm run tests```
 
 First thing first. 
 
-Almost all the APIs except /signup and /login, require JWT token. Otherwise server will throw following error:
+Almost all the APIs (except ```/signup``` and ```/login```), require ```JWT``` token. Otherwise server will throw following error:
 
 ```
 {
