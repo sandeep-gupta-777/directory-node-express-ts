@@ -11,7 +11,9 @@ import { body } from "express-validator/check";
 const bcrypt = require('bcryptjs');
 
 export function sendSuccessRes(req:Request, res:Response) {
-    res.status(200).json({errCode:0, desc:'Success', data:res.locals.successData});
+    let successRes = {errCode:0, desc:'Success', data:res.locals.successData};
+    console.dir(successRes);
+    res.status(200).json(successRes);
     // res.send("hi");
 }
 

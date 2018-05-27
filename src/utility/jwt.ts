@@ -17,7 +17,8 @@ export function jwt_sign(dirUser:IDirUser) {
 
     let secretKey = "secret" + dirUser._id + dirUser.USER_HASHED_PASSWORD;
     return new Promise((resolve, reject) => {
-        jwt.sign(claims, secretKey, { expiresIn: '30000s' }, (err:any, token:any) => {//todo: change secret
+        /*TODO:keeping expiry too high for testing, use refresh token instead*/
+        jwt.sign(claims, secretKey, { expiresIn: '3000000000s' }, (err:any, token:any) => {//todo: change secret
             if(err) return reject(err);
             return resolve(token);
         });

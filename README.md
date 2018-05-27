@@ -44,7 +44,7 @@ Following are the steps to set up token:
 
 
 **1. Registration**
-* Signup
+* **Signup**
 
 **PUT** ``` http://localhost:3000/signup```
 
@@ -58,7 +58,7 @@ Sample payload:
 ```
 Returns: User detail along with a JWT token which is to be used in subsequent APIs
 
-* Login:
+* **Login**:
 
 **POST** ```http://localhost:3000/login```
 
@@ -75,7 +75,7 @@ Returns: User detail along with a JWT token which is to be used in subsequent AP
 **2. Accounts-actions APIs**
 
 
-* Get account details:
+* **Get account details**:
 
 
 **GET** ```http://localhost:3000/users/:USER_ID/accounts/read?name=value1&number=value2&scope=value3&page=value4```
@@ -90,7 +90,7 @@ Sample payload: None. This is GET API
 
 Return: Account details of user. If used is admin with ```scope=global``` flag, this apis return top 10 account matching the query.
 
-* Create account:
+* **Create account**:
 
 **PUT** ```http://localhost:3000/users/:USER_ID/accounts/create```
 
@@ -110,7 +110,7 @@ Example: payload
 
 **Returns** Created user details with a JWT token. This token can be used by user to start a session.
 
-* Update account: 
+* **Update account**:
 
 **POST** ```http://localhost:3000/users/:USER_ID/accounts/update?name=value1&number=value2&scope=value3```
 
@@ -127,7 +127,7 @@ Example: payload
 ```
 **Returns** "n modified". n is number of accounts modified.
 
-* Delete account:
+* **Delete account**:
 
 **DELETE** ```http://localhost:3000/users/:USER_ID/accounts/delete?name=value1&number=value2&scope=value3```
 
@@ -143,7 +143,7 @@ Used to delete accounts. A non-admin can delete their own account while admin ca
 
 **3. Directory-actions**
 
-* Get directory entry details:
+* **Get directory entry details**:
 
 **GET** ```http://localhost:3000/users/:USER_ID/directory/read?name=value1&number=value2&scope=value3&page=value4```
 
@@ -157,7 +157,7 @@ Sample payload: None. This is GET API
 
 **Returns** directory entry details which were created by user. If user is admin with ```scope=global``` flag, this API return top 10 directory entries matching the query.
 
-* Create directory entry:
+* **Create directory entry**:
 
 
 **PUT** ```http://localhost:3000/users/:USER_ID/directory/create```
@@ -177,7 +177,7 @@ Example: payload
 ```
 **Returns** Success response if successful.
 
-* Update directory entry: 
+* **Update directory entry**:
 
 
 **POST** ```http://localhost:3000/users/:USER_ID/directory/update?name=value1&number=value2&scope=value3```
@@ -196,7 +196,7 @@ Example: payload
 
 **Returns** "n modified". n is number of directory entries modified.
 
-* Delete directory entry:
+* **Delete directory entry**:
 
 **DELETE** ```http://localhost:3000/users/:USER_ID/directory/delete?name=value1&number=value2&scope=value3```
 
@@ -209,7 +209,7 @@ Used to delete directory entry. A non-admin can delete their own directory entry
 
 **Returns** "n delete". n is number of directory entries deleted.
 
-# Error code
+# Error codes and details
 For frustration free integration, these APIs provide very specific errors to developers, so that they know what might be going wrong.
 These errors can also be useful to pin-point issues while inspecting server logs in future.
 

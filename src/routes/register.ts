@@ -56,7 +56,7 @@ export let registerRoutesInit = function (router: any) {
                 USER_HASHED_PASSWORD: createPasswordHash(req.body.PASSWORD, 10),
             };
         }catch (e) {
-            next(e);
+            return next(e);
         }
         let userRecordRef: IDirUser = {};
         let account_create_url_regex = /users[\/]\w*[\/]accounts[\/]create/i;

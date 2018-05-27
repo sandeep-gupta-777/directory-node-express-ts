@@ -44,7 +44,7 @@ app.use(
 let router = routesInit();
 app.use(router);
 app.use(function(err:any, req:Request, res:Response, next:NextFunction) {
-    console.dir(err);
+    // console.dir(err);
     res.locals.err = err;
     sendErrRes(req, res);
 });

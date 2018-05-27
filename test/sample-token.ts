@@ -1,0 +1,2 @@
+export const sample_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkaXJlY3Rvcnlfc2FuZGVlcC5oZXJva3VhcHAuY29tIiwibmFtZSI6InNhbmRlZXAgZ3VwdGEiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTI3NDU5NjQzLCJleHAiOjQ1Mjc0NTk2NDN9.3XmudDUKizBfnloWscykjS3ZXiRKtDZXcCP79aQVAOA';
+export const sample_id = '5b0ad0b5b20501e1a08b5870';
