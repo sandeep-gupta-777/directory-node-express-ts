@@ -8,6 +8,8 @@ This is an Express project written in Typescript. This project is a bundle of AP
 4. Run the node server: ```npm run watch-node```.
 
 ** MAKE SURE YOU HAVE INTERNET CONNECTION TO CONNECT TO MONGODB**
+
+
 5. Open browser and go to ```http://localhost:3000```. You will see *this is home page*
 
 To run tests: ```npm run tests```
@@ -71,7 +73,7 @@ Used by admin to create new admin("USER_ROLE":"ADMIN") or non-admin("USER_ROLE":
 Example: payload
 ```
 {
-	  "USER_FIRST_NAME": "sandeep",
+	"USER_FIRST_NAME": "sandeep",
     "USER_EMAIL": "sandeep121212@gmail.com1",
     "PASSWORD":"SANDEEP",
     "USER_ROLE":"ADMIN"
@@ -90,7 +92,7 @@ Used to update account details. A non-admin can update their own account details
 Example: payload
 ```
 {
-	  "USER_FIRST_NAME": "sandeep_updated_name",
+    "USER_FIRST_NAME": "sandeep_updated_name",
 }
 ```
 **Returns** "n modified". n is number of accounts modified.
