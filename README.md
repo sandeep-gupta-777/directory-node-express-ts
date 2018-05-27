@@ -16,7 +16,9 @@ To run tests: ```npm run tests```
 
 # API Documentation
 
-First thing first. Almost all the APIs except /signup and /login, require JWT token. Otherwise server will throw following error:
+First thing first. 
+
+Almost all the APIs except /signup and /login, require JWT token. Otherwise server will throw following error:
 
 ```
 {
@@ -27,8 +29,8 @@ First thing first. Almost all the APIs except /signup and /login, require JWT to
 
 Following are the steps to set up token:
 
-1. Call /signup or /login as demonstrated below.
-2. Above call will respond JWT token.
+1. Call ```/signup``` or ```/login``` as demonstrated below.
+2. Above call will respond ```JWT``` token.
 3. If you are using postman to test these APIs, set header as follows:
 
 ```Content-Type:application/json```
