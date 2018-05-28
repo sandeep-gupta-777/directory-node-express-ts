@@ -244,3 +244,7 @@ ErrorCode | Details
 ```ROUTE_NOT_FOUND```| ```{errCode: "1700", statusCode: "404", desc: "ROUTE_NOT_FOUND"}```
 ```UNRECOGNISED_VALIDATION_ERROR```| ```{errCode: "9001", statusCode: "500", desc: "UNRECOGNISED_VALIDATION_ERROR"}```
 ```UNRECOGNISED_ERROR```| ```{errCode: "9002", statusCode: "500", desc: "UNRECOGNISED_ERROR"}```
+
+
+# Credits
+Typescript configurations in this project is taken from Microsoft's scaffold. [link](https://github.com/Microsoft/TypeScript-Node-Starter)
